@@ -1,0 +1,4 @@
+SHOW DATABASES;
+USE rmdb;
+SHOW TABLES;
+
