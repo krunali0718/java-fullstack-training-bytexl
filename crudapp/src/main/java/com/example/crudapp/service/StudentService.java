@@ -45,9 +45,13 @@ public class StudentService {
 
     public Student updateStudent(Student student) {
 
-        Student existingstudent= studentRepo.getById(student.getId());
+        Optional<Student> existingstudentOpt = studentRepo.findById(student.getId());
+        if (existingstudentOpt.isEmpty()) {
+            return null;
+        }
 
-        existingstudent.setName (student.getName());
+        Student existingstudent = existingstudentOpt.get();
+        existingstudent.setName(student.getName());
         existingstudent.setEmail(student.getEmail());
         studentRepo.save(existingstudent);
         return existingstudent;
