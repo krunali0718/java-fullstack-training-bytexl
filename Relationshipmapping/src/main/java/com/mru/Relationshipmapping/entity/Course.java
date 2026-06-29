@@ -13,11 +13,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AadharCard {
-    
-    @Id
-    @GeneratedValue
-    Integer id;
+public class Course {
 
-    Long aadharNumber;
+   @Id
+   @GeneratedValue
+   private Long id;
+
+   private String courseName;
+
 }
